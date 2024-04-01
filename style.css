@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #word-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .word {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  #sentence {
+    margin-top: 20px;
+    border: 2px dashed #aaa;
+    padding: 20px;
+    min-height: 50px;
+    display: flex; /* Add this line */
+    flex-wrap: wrap; /* Add this line */
+    align-items: center; /* Add this line */
+  }
+  
+  .dropzone {
+    text-align: center;
+    line-height: 50px;
+    color: #aaa;
+  }
+  
+  .over {
+    background-color: #ccc;
+  }
+  
