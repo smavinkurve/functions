@@ -8,19 +8,24 @@
   src: url(Fonts/PPNikkeiMaru-Regular.otf);
 }
 
+@font-face {
+  font-family: Libre Baskerville;
+  src: url(Fonts/LibreBaskerville-Regular.ttf);
+}
 
 :root {
   --title-font: 'Nikkei Maru Regular'; 
   --base-font: 'Nikkei Maru Light';
-  /* --quote-font: 'Apfel Grotesk Regular'; */
+  --word-font: 'Libre Baskerville';
 
   --font-size: 16px;
   --line-height: 150%;
   --spacing: 10px;
 
   --dark-grey:#0B0B0B;
+  --light-grey: #c9c9c9;
   --white: #FFFFFF;
-  --beige: rgb(237, 233, 222);
+  --beige: rgb(246, 242, 230);
 }
 
 
@@ -45,14 +50,15 @@ h1 {
 .introduction {
   font-family: var(--base-font);
   text-align: center;
-  font-size: calc(1.1* var(--font-size));
+  font-size: calc(1.2* var(--font-size));
+  line-height: var(--line-height);
   width: 40%;
 }
 
 .button {
     font-family: var(--base-font);
     font-size: calc(1.2* var(--font-size));
-    padding: 0.5em;
+    padding: 0.6em;
     color: var(--white);
     background-color: var(--dark-grey);
   }
@@ -62,7 +68,7 @@ h1 {
     display: flex;
     justify-content: center;
     width: 100%;
-    gap: calc(2*var(--spacing));
+    gap: calc(4* var(--spacing));
   }
 
 .homepage {
@@ -86,8 +92,10 @@ h1 {
 }
 
 .word {
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
+  font-family: var(--word-font);
+  font-size: calc(1.1* var());
+  background-color: var(--beige);
+  border: 1px solid var(--dark-grey);
   padding: 5px 10px;
   margin: 5px;
   cursor: pointer;
@@ -95,26 +103,28 @@ h1 {
 
 #sentence {
   margin-top: 20px;
-  border: 2px dashed #aaa;
+  border: 2px dashed var(--light-grey);
   padding: 20px;
   min-height: 50px;
   display: flex;
-  margin-top: 20px;
-  border: 2px dashed #aaa;
+  margin-top: 2em;
+  border: 2px dashed var(--light-grey);
   padding: 20px;
   min-height: 50px;
-  min-width: 70%; /* Set maximum width */
-  word-wrap: break-word; /* Allow word wrapping */
+  min-width: 70%; 
+  word-wrap: break-word;
 }
 
 .dropzone {
+  font-family: var(--base-font);
+  font-size: calc(1.2* var(--font-size));
+  line-height: var(--line-height); 
   text-align: center;
-  line-height: 1.5; /* Adjust line height */
-  color: #aaa;
+  color: var(--dark-grey);
 }
 
 .over {
-  background-color: #ccc;
+  background-color: var(--light-grey);
 }
 
 
