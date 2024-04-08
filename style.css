@@ -34,11 +34,12 @@
 
 } */
 
+/* QUESTIONS - ****************************************************************  */
 h1 {
     font-family: var(--title-font);
-    font-size: calc(4* var(--font-size));
+    font-size: calc(3.5* var(--font-size));
     text-align: center;
-    margin-top: 2em;
+    margin-top: 1.2em;
     margin-bottom: 0.5em;
   }
 
@@ -47,13 +48,13 @@ h1 {
     text-align: center;
   }
 
-.introduction {
+/* .introduction {
   font-family: var(--base-font);
   text-align: center;
   font-size: calc(1.2* var(--font-size));
   line-height: var(--line-height);
   width: 40%;
-}
+} */
 
 .button {
     font-family: var(--base-font);
@@ -62,6 +63,16 @@ h1 {
     color: var(--white);
     background-color: var(--dark-grey);
   }
+
+button {
+  font-family: var(--base-font);
+  font-size: calc(1.2* var(--font-size));
+  padding: 0.6em;
+  color: var(--white);
+  background-color: var(--dark-grey);
+  margin-bottom: 2em;
+
+}
   
 .directions {
     margin-top: 5em;
@@ -85,7 +96,7 @@ h1 {
   align-items: center;
 }
 
-/* MAGNETIC POETRY */
+/* MAGNETIC POETRY - **************************************************************** */
 #word-container {
   display: flex;
   flex-wrap: wrap;
@@ -122,6 +133,7 @@ h1 {
   text-align: center;
   color: var(--dark-grey);
 }
+
 
 .over {
   background-color: var(--light-grey);
