@@ -106,7 +106,17 @@ function drop(e) {
   const wordElement = createWordElement(draggedWord);
   wordElement.classList.add('word-dropped'); // Apply styling for words dropped in the sentence area
   this.classList.remove('over'); // Remove the 'over' class to reset background color
-  this.appendChild(wordElement); // Append the new word element to the sentence element
+  
+  // Check if the dropped word is placed at the beginning of the line (after pressing Enter)
+  if (e.target.tagName === 'DIV') {
+    // Append the new word element to the sentence element
+    e.target.appendChild(wordElement);
+  } else {
+    // Create a new line and append the word to it
+    const newLine = document.createElement('div');
+    newLine.appendChild(wordElement);
+    this.appendChild(newLine);
+  }
 }
 
 // Fetch words when the page loads

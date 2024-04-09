@@ -41,7 +41,7 @@ h1 {
     font-family: var(--title-font);
     font-size: calc(3.5* var(--font-size));
     text-align: center;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 0.5em;
   }
 
@@ -92,6 +92,8 @@ button:hover {
 #word-container {
   display: flex;
   flex-wrap: wrap;
+  width: 70%;
+  justify-content: center;
 }
 
 .word {
@@ -116,6 +118,7 @@ button:hover {
   cursor: pointer;
 
   display: inline;
+
   /* display: flex;
   flex-wrap: wrap; */
 }
