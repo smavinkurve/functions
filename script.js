@@ -36,7 +36,6 @@ fetchQuestions();
 
 
 
-
 // WORDS FETCHING -********************************************************************
 // Fetch JSON data
 async function fetchWords() {
@@ -59,31 +58,27 @@ function displayWords(data) {
 
   // Add fixed words
   data.fixedWords.forEach(word => {
-    const wordElement = document.createElement('div');
-    wordElement.textContent = word;
-    wordElement.classList.add('word');
-    wordElement.draggable = true;
+    const wordElement = createWordElement(word);
     wordContainer.appendChild(wordElement);
   });
 }
 
-// Fetch words when the page loads
-fetchWords();
+// Function to create a word element
+function createWordElement(word) {
+  const wordElement = document.createElement('div');
+  wordElement.textContent = word;
+  wordElement.classList.add('word');
+  wordElement.draggable = true;
+  return wordElement;
+}
 
+// Drag and drop functionality
 
-
-
-
-
-
-
-// WORDS BEHAVIOR -********************************************************************
 const words = document.querySelectorAll('.word');
 const sentence = document.getElementById('sentence');
 
 words.forEach(word => {
   word.addEventListener('dragstart', dragStart);
-  word.addEventListener('dragend', dragEnd);
 });
 
 sentence.addEventListener('dragover', dragOver);
@@ -93,10 +88,6 @@ sentence.addEventListener('drop', drop);
 
 function dragStart(e) {
   e.dataTransfer.setData('text/plain', this.textContent);
-}
-
-function dragEnd() {
-  // No need to do anything in this case
 }
 
 function dragOver(e) {
@@ -115,17 +106,19 @@ function dragLeave() {
 function drop(e) {
   e.preventDefault();
   const draggedWord = e.dataTransfer.getData('text/plain');
-  const start = sentence.selectionStart;
-  const end = sentence.selectionEnd;
-  const text = sentence.value;
-  const before = text.substring(0, start);
-  const after = text.substring(end, text.length);
-  const wordWithSpace = draggedWord === 'Enter' ? '\n' : draggedWord + ' ';
-  sentence.value = before + wordWithSpace + after;
-  sentence.focus();
-  sentence.setSelectionRange(start + wordWithSpace.length, start + wordWithSpace.length);
-  sentence.classList.remove('over');
-  wordClone.classList.add('word'); // Add the 'word' class to the cloned word
-  sentence.appendChild(wordClone);
+  const wordElement = createWordElement(draggedWord);
+  wordElement.classList.add('word-dropped'); // Apply styling for words dropped in the sentence area
+  sentence.classList.remove('over'); // Remove the 'over' class to reset background color
+  sentence.appendChild(wordElement);
 }
 
+// Fetch words when the page loads
+fetchWords();
+
+// Create a new word element with the dragged word's text
+const wordElement = document.createElement('div');
+wordElement.textContent = draggableElement.textContent;
+wordElement.classList.add('word-dropped');
+
+// Append the new word element to the sentence element
+sentence.appendChild(wordElement);

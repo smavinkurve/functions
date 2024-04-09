@@ -39,7 +39,7 @@ h1 {
     font-family: var(--title-font);
     font-size: calc(3.5* var(--font-size));
     text-align: center;
-    margin-top: 1.2em;
+    margin-top: 3em;
     margin-bottom: 0.5em;
   }
 
@@ -48,21 +48,14 @@ h1 {
     text-align: center;
   }
 
-/* .introduction {
-  font-family: var(--base-font);
-  text-align: center;
-  font-size: calc(1.2* var(--font-size));
-  line-height: var(--line-height);
-  width: 40%;
-} */
 
-.button {
+/* .button {
     font-family: var(--base-font);
     font-size: calc(1.2* var(--font-size));
     padding: 0.6em;
     color: var(--white);
     background-color: var(--dark-grey);
-  }
+  } */
 
 button {
   font-family: var(--base-font);
@@ -103,10 +96,17 @@ button:hover {
 /* MAGNETIC POETRY - **************************************************************** */
 
 /* Style for word elements inside the sentence area */
-.word-dropped {
-  background-color: #d9edf7; /* Example color for words dropped in the sentence area */
-  cursor: default;
-}
+/* .word-dropped {
+  font-family: var(--word-font);
+  font-size: calc(1.1* var());
+  background-color: var(--beige);
+  border: 1px solid var(--dark-grey);
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+
+  display: inline-block;
+} */
 
 
 #word-container {
@@ -121,21 +121,38 @@ button:hover {
   border: 1px solid var(--dark-grey);
   padding: 5px 10px;
   margin: 5px;
-  cursor: pointer;
+  cursor: grab;
+
+  display: inline-block;
 }
 
-#sentence {
+#sentence .word {
+  font-family: var(--word-font);
+  font-size: calc(1.1* var());
+  background-color: var(--beige);
+  border: 1px solid var(--dark-grey);
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+
+  /* display: inline-block; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#sentence-container {
   margin-top: 20px;
   border: 2px dashed var(--light-grey);
   padding: 20px;
-  min-height: 50px;
-  display: flex;
+
   margin-top: 2em;
   border: 2px dashed var(--light-grey);
   padding: 20px;
-  min-height: 50px;
+  min-height: 200px;
   min-width: 70%; 
   word-wrap: break-word;
+  overflow-y: auto;
+
 }
 
 .dropzone {
