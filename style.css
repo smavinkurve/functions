@@ -73,6 +73,10 @@ button {
   margin-bottom: 2em;
 
 }
+
+button:hover {
+  background-color: hotpink;
+}
   
 .directions {
     margin-top: 5em;
@@ -97,6 +101,14 @@ button {
 }
 
 /* MAGNETIC POETRY - **************************************************************** */
+
+/* Style for word elements inside the sentence area */
+.word-dropped {
+  background-color: #d9edf7; /* Example color for words dropped in the sentence area */
+  cursor: default;
+}
+
+
 #word-container {
   display: flex;
   flex-wrap: wrap;
@@ -137,6 +149,13 @@ button {
 
 .over {
   background-color: var(--light-grey);
+}
+
+/* OTHER ELEMENTS - **************************************************************** */
+footer {
+  position: absolute;
+  bottom: 0;
+  padding: 2em;
 }
 
 

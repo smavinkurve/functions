@@ -37,7 +37,47 @@ fetchQuestions();
 
 
 
-// WORDS -********************************************************************
+// WORDS FETCHING -********************************************************************
+// Fetch JSON data
+async function fetchWords() {
+  try {
+    const response = await fetch('words.json'); // Replace 'words.json' with your JSON file path or URL
+    if (!response.ok) {
+      throw new Error('Failed to fetch words');
+    }
+    const data = await response.json();
+    displayWords(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Function to display words in the HTML
+function displayWords(data) {
+  const wordContainer = document.getElementById('word-container');
+  wordContainer.innerHTML = '';
+
+  // Add fixed words
+  data.fixedWords.forEach(word => {
+    const wordElement = document.createElement('div');
+    wordElement.textContent = word;
+    wordElement.classList.add('word');
+    wordElement.draggable = true;
+    wordContainer.appendChild(wordElement);
+  });
+}
+
+// Fetch words when the page loads
+fetchWords();
+
+
+
+
+
+
+
+
+// WORDS BEHAVIOR -********************************************************************
 const words = document.querySelectorAll('.word');
 const sentence = document.getElementById('sentence');
 

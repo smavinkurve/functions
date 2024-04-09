@@ -1,11 +1,11 @@
 [
-    {"question": "I care about -"},
-    {"question": "How do you handle stress?"},
-    {"question": "What motivates you to succeed?"},
-    {"question": "I feel joy when -"},
-    {"question": "I feel excited about what I do when -"},
-    {"question": "I want to do more of -"},
-    {"question": "My ideal day includes -"},
-    {"question": "My values are - "},
-    {"question": "What motivates you to succeed?"}
-  ]
+  {"question": "I care about -"},
+  {"question": "How do you handle stress?"},
+  {"question": "What motivates you to succeed?"},
+  {"question": "I feel joy when -"},
+  {"question": "I feel excited about what I do when -"},
+  {"question": "I want to do more of -"},
+  {"question": "My ideal day includes -"},
+  {"question": "My values are - "},
+  {"question": "What motivates you to succeed?"}
+]
