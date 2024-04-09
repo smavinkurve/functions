@@ -69,17 +69,14 @@ function createWordElement(word) {
   wordElement.textContent = word;
   wordElement.classList.add('word');
   wordElement.draggable = true;
+  // Add event listener for drag start to dynamically added word elements
+  wordElement.addEventListener('dragstart', dragStart);
   return wordElement;
 }
 
 // Drag and drop functionality
 
-const words = document.querySelectorAll('.word');
 const sentence = document.getElementById('sentence');
-
-words.forEach(word => {
-  word.addEventListener('dragstart', dragStart);
-});
 
 sentence.addEventListener('dragover', dragOver);
 sentence.addEventListener('dragenter', dragEnter);
@@ -108,17 +105,15 @@ function drop(e) {
   const draggedWord = e.dataTransfer.getData('text/plain');
   const wordElement = createWordElement(draggedWord);
   wordElement.classList.add('word-dropped'); // Apply styling for words dropped in the sentence area
-  sentence.classList.remove('over'); // Remove the 'over' class to reset background color
-  sentence.appendChild(wordElement);
+  this.classList.remove('over'); // Remove the 'over' class to reset background color
+  this.appendChild(wordElement); // Append the new word element to the sentence element
 }
 
 // Fetch words when the page loads
-fetchWords();
-
-// Create a new word element with the dragged word's text
-const wordElement = document.createElement('div');
-wordElement.textContent = draggableElement.textContent;
-wordElement.classList.add('word-dropped');
-
-// Append the new word element to the sentence element
-sentence.appendChild(wordElement);
+fetchWords().then(() => {
+  // Add event listeners for drag and drop functionality after words are loaded
+  const words = document.querySelectorAll('.word');
+  words.forEach(word => {
+    word.addEventListener('dragstart', dragStart);
+  });
+});
