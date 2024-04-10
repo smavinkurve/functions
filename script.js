@@ -33,9 +33,6 @@ function shuffleQuestions() {
 // Fetch questions when the page loads
 fetchQuestions();
 
-
-
-
 // WORDS FETCHING -********************************************************************
 // Fetch JSON data
 async function fetchWords() {
@@ -117,6 +114,11 @@ function drop(e) {
     newLine.appendChild(wordElement);
     this.appendChild(newLine);
   }
+
+  // Clear placeholder text if present
+  if (this.textContent.trim() === this.getAttribute('placeholder')) {
+    this.textContent = '';
+  }
 }
 
 // Fetch words when the page loads
@@ -126,4 +128,21 @@ fetchWords().then(() => {
   words.forEach(word => {
     word.addEventListener('dragstart', dragStart);
   });
+});
+
+// Add placeholder text behavior for the contenteditable div
+const sentenceDiv = document.getElementById('sentence');
+
+sentenceDiv.addEventListener('focus', function() {
+  // Remove placeholder text when the div is focused
+  if (this.textContent.trim() === this.getAttribute('placeholder')) {
+    this.textContent = '';
+  }
+});
+
+sentenceDiv.addEventListener('blur', function() {
+  // Add placeholder text back if the div loses focus and it's empty
+  if (this.textContent.trim() === '') {
+    this.textContent = this.getAttribute('placeholder');
+  }
 });

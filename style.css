@@ -42,7 +42,7 @@ h1 {
     font-size: calc(3.5* var(--font-size));
     text-align: center;
     margin-top: 2em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.6em;
   }
 
   p {
@@ -50,10 +50,17 @@ h1 {
     text-align: center;
   }
 
+
+.button-container {
+  display: flex;
+  gap: calc(3* var(--spacing));
+}
+
 button {
   font-family: var(--base-font);
   font-size: calc(1.2* var(--font-size));
   padding: 0.6em;
+  border-radius: 0.3em;
   color: var(--white);
   background-color: var(--dark-grey);
   margin-bottom: 2em;
