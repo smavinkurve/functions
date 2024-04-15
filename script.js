@@ -73,15 +73,12 @@ function createWordElement(word) {
 
 // Drag and drop functionality
 
-const sentence = document.getElementById('sentence');
-
-sentence.addEventListener('dragover', dragOver);
-sentence.addEventListener('dragenter', dragEnter);
-sentence.addEventListener('dragleave', dragLeave);
-sentence.addEventListener('drop', drop);
-
+// JavaScript with modifications
+// Drag and drop functionality
+// Drag and drop functionality
 function dragStart(e) {
   e.dataTransfer.setData('text/plain', this.textContent);
+  e.dataTransfer.setData('text/html', this.outerHTML); // Store the outerHTML for styling
 }
 
 function dragOver(e) {
@@ -99,18 +96,21 @@ function dragLeave() {
 
 function drop(e) {
   e.preventDefault();
-  const draggedWord = e.dataTransfer.getData('text/plain');
-  const wordElement = createWordElement(draggedWord);
-  wordElement.classList.add('word-dropped'); // Apply styling for words dropped in the sentence area
-  this.classList.remove('over'); // Remove the 'over' class to reset background color
-  
+  const draggedWordText = e.dataTransfer.getData('text/plain');
+  const draggedWordHTML = e.dataTransfer.getData('text/html');
+
+  // Create a new word element with the stored HTML content
+  const wordElement = document.createElement('div');
+  wordElement.innerHTML = draggedWordHTML;
+  wordElement.classList.add('word', 'word-dropped'); // Add necessary classes for styling
+
   // Check if the dropped word is placed at the beginning of the line (after pressing Enter)
-  if (e.target.tagName === 'DIV') {
+  if (e.target.tagName === 'DIV' || e.target.tagName === 'P') {
     // Append the new word element to the sentence element
-    e.target.appendChild(wordElement);
+    e.target.parentNode.insertBefore(wordElement, e.target.nextSibling);
   } else {
     // Create a new line and append the word to it
-    const newLine = document.createElement('div');
+    const newLine = document.createElement('p');
     newLine.appendChild(wordElement);
     this.appendChild(newLine);
   }

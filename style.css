@@ -125,24 +125,24 @@ button:hover {
   cursor: pointer;
 
   display: inline;
-
-  /* display: flex;
-  flex-wrap: wrap; */
 }
 
 #sentence-container {
-  margin-top: 20px;
-  border: 2px dashed var(--light-grey);
-  padding: 20px;
-
-  margin-top: 2em;
-  border: 2px dashed var(--light-grey);
-  padding: 20px;
-  min-height: 200px;
+  min-height: 2em;
   min-width: 70%; 
   word-wrap: break-word;
   overflow-y: auto;
+}
 
+#sentence, #sentence1, #sentence2 {
+  border: 2px dashed var(--light-grey);
+  padding: calc(2* var(--spacing));
+
+  margin-top: 2em;
+  min-height: 5em;
+  min-width: 70%; 
+  word-wrap: break-word;
+  overflow-y: auto;
 }
 
 .dropzone {
@@ -160,7 +160,7 @@ button:hover {
 
 /* OTHER ELEMENTS - **************************************************************** */
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding: 2em;
 }
