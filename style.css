@@ -35,13 +35,33 @@
 /* body {
 
 } */
+/* NAVBAR - **************************************************************** */
+nav {
+  background-color: var(--dark-grey);
+  width: 100vw;
+}
+
+.navbar {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.navbar p {
+  font-size: calc(1.3* var(--font-size));
+  color: var(--white);
+}
 
 /* QUESTIONS - ****************************************************************  */
 h1 {
     font-family: var(--title-font);
     font-size: calc(3.5* var(--font-size));
     text-align: center;
-    margin-top: 2em;
+    margin-top: 1em;
     margin-bottom: 0.6em;
   }
 
@@ -64,14 +84,13 @@ button {
   color: var(--white);
   background-color: var(--dark-grey);
   margin-bottom: 2em;
-
 }
 
 button:hover {
   background-color: var(--lemon);
   color: var(--dark-grey);
 }
-  
+
 .directions {
     margin-top: 5em;
     display: flex;
@@ -134,12 +153,18 @@ button:hover {
   overflow-y: auto;
 }
 
+#sentence-container button {
+  margin-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
 #sentence, #sentence1, #sentence2 {
   border: 2px dashed var(--light-grey);
   padding: calc(2* var(--spacing));
 
-  margin-top: 2em;
-  min-height: 5em;
+  margin-top: 1em;
+  min-height: 3em;
   min-width: 70%; 
   word-wrap: break-word;
   overflow-y: auto;
@@ -152,7 +177,6 @@ button:hover {
   text-align: center;
   color: var(--dark-grey);
 }
-
 
 .over {
   background-color: var(--light-grey);

@@ -146,3 +146,10 @@ sentenceDiv.addEventListener('blur', function() {
     this.textContent = this.getAttribute('placeholder');
   }
 });
+
+// Function to clear a sentence container
+function clearSentence(containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = ''; // Clear the container's content
+  container.textContent = container.getAttribute('placeholder'); // Restore placeholder text
+}

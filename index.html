@@ -11,17 +11,12 @@
 
   <body class="prompt">
     <!-- NAV BAR -->
-    <!-- <nav id="top">
+    <nav id="top">
       <div class="navbar">
-        <div class="buttons-mobile">
-          <div class="navbar-button"> <a href="index.html"> Home </a> </div>
-          <div class="navbar-button"> <a href="solid.html"> 1 ↗&#xFE0E; </a> </div>
-          <div class="navbar-button"> <a href="feeling.html"> 2 ↗&#xFE0E; </a> </div>
-          <div class="navbar-button"> <a href="identity.html"> 3 ↗&#xFE0E; </a> </div>
-        </div>
-        <div class="navbar-button randomize" id="randomize"> Randomize</div>
+        <p>Magnetic Web Haiku</p>
+        <p>About</p>
       </div>
-    </nav> -->
+    </nav>
 
     <h1 id="question">Random Question</h1>
 
@@ -35,8 +30,11 @@
 
     <div id="sentence-container">
       <div id="sentence" class="dropzone" contenteditable="true"></div>
+      <button onclick="clearSentence('sentence')">Reset</button> 
       <div id="sentence1" class="dropzone" contenteditable="true"></div>
+      <button onclick="clearSentence('sentence1')">Reset</button> 
       <div id="sentence2" class="dropzone" contenteditable="true"></div>
+      <button onclick="clearSentence('sentence2')">Reset</button> 
     </div>
 
 
