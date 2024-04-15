@@ -120,6 +120,7 @@ button:hover {
   flex-wrap: wrap;
   width: 70%;
   justify-content: center;
+  margin-bottom: 3em;
 }
 
 .word {
@@ -163,7 +164,7 @@ button:hover {
   border: 2px dashed var(--light-grey);
   padding: calc(2* var(--spacing));
 
-  margin-top: 1em;
+  margin-top: 0.3em;
   min-height: 3em;
   min-width: 70%; 
   word-wrap: break-word;
@@ -180,28 +181,6 @@ button:hover {
 
 .over {
   background-color: var(--light-grey);
-}
-
-/* OTHER ELEMENTS - **************************************************************** */
-footer {
-  position: relative;
-  bottom: 0;
-  padding: 2em;
-}
-
-
-/* DOODLE */
-canvas {
-  width: 80vw;
-  height: 60vh;
-  border: 2px solid var(--dark-grey);
-}
-
-.doodle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 
