@@ -123,7 +123,7 @@ button:hover {
 
 #sentence .word {
   font-family: var(--word-font);
-  font-size: calc(1.1* var());
+  font-size: calc(1* var());
   background-color: var(--beige);
   border: 1px solid var(--dark-grey);
   padding: 5px 10px;
@@ -147,7 +147,6 @@ button:hover {
 }
 
 #sentence, #sentence1, #sentence2 {
-  border: 2px dashed var(--light-grey);
   padding: calc(2* var(--spacing));
 
   margin-top: 0.3em;
@@ -166,7 +165,7 @@ button:hover {
 }
 
 .over {
-  background-color: var(--light-grey);
+  background-color: var(--lemon);
 }
 
 
@@ -223,19 +222,12 @@ h1 {
   
   .word {
     font-size: calc(1.1* var(--font-size));
-    background-color: var(--beige);
   }
   
   #sentence .word {
-    font-family: var(--word-font);
     font-size: calc(1.1* var());
-    background-color: var(--beige);
-    border: 1px solid var(--dark-grey);
     padding: 5px 10px;
     margin: 5px;
-    cursor: pointer;
-  
-    display: inline;
   }
   
   #sentence-container {
@@ -272,4 +264,20 @@ h1 {
   
 
 }
-  
+
+
+/* ****************************************************************************************************************** */
+/* MEDIA QUERIES - PRINT */
+@media print {
+  .hidden-for-pdf {
+    display: none !important;
+  }
+
+  #word-container {
+    display: none;
+  }
+
+  button, nav, footer {
+    display: none;
+  }
+}

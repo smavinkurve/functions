@@ -153,3 +153,11 @@ function clearSentence(containerId) {
   container.innerHTML = ''; // Clear the container's content
   container.textContent = container.getAttribute('placeholder'); // Restore placeholder text
 }
+
+
+
+// PDF -********************************************************************
+// Function to print the screen as PDF
+function printScreen() {
+  window.print(); // Open print dialog
+}
