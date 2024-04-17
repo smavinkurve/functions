@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project 5 Functions - Sachi Mavinkurve</title>
+<link href="assets/reset.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+<script defer src="script.js"> </script>
+</head>
+
+  <body class="prompt">
+    <!-- NAV BAR -->
+    <nav id="top">
+      <div class="navbar">
+        <p> Career Web (Magnetic?) Haiku</p>
+        <p> How to Play</p>
+      </div>
+    </nav>
+
+    <h1 id="question">Random Question</h1>
+
+    <section class="button-container">
+      <button onclick="shuffleQuestions()">Shuffle Question</button>
+      <button onclick="printScreen()">Print PDF</button>
+    </section>
+
+    <div id="word-container"></div>
+
+    <div id="sentence-container">
+      <div id="sentence" class="dropzone" contenteditable="true"></div>
+      <button onclick="clearSentence('sentence')">Reset</button> 
+      <div id="sentence1" class="dropzone" contenteditable="true"></div>
+      <button onclick="clearSentence('sentence1')">Reset</button> 
+      <div id="sentence2" class="dropzone" contenteditable="true"></div>
+      <button onclick="clearSentence('sentence2')">Reset</button> 
+    </div>
+
+    <footer>
+      <p> Sachi Mavinkurve - Typography & Interaction 2023 - 24</p>
+    </footer>
+  </body>
+  
+</html>

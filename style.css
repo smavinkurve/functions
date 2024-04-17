@@ -56,6 +56,31 @@ nav {
   color: var(--white);
 }
 
+
+/* LANDING PAGE - ****************************************************************  */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.introduction {
+  font-family: var(--base-font);
+  text-align: center;
+  font-size: calc(1.1* var(--font-size));
+  width: 40%;
+}
+
+.homepage button {
+  padding: 0.6em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-top: 3em;
+}
+
 /* QUESTIONS - ****************************************************************  */
 h1 {
     font-family: var(--title-font);
@@ -147,6 +172,7 @@ button:hover {
 }
 
 #sentence, #sentence1, #sentence2 {
+  border: 2px dashed var(--light-grey);
   padding: calc(2* var(--spacing));
 
   margin-top: 0.3em;
@@ -275,6 +301,10 @@ h1 {
 
   #word-container {
     display: none;
+  }
+
+  #sentence, #sentence1, #sentence2 {
+    border: var(--white);
   }
 
   button, nav, footer {
