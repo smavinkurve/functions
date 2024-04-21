@@ -72,10 +72,7 @@ function createWordElement(word) {
 }
 
 // Drag and drop functionality
-
 // JavaScript with modifications
-// Drag and drop functionality
-// Drag and drop functionality
 function dragStart(e) {
   e.dataTransfer.setData('text/plain', this.textContent);
   e.dataTransfer.setData('text/html', this.outerHTML); // Store the outerHTML for styling
@@ -121,9 +118,8 @@ function drop(e) {
   }
 }
 
-// Fetch words when the page loads
-fetchWords().then(() => {
-  // Add event listeners for drag and drop functionality after words are loaded
+// Add event listeners for drag and drop functionality after words are loaded
+document.addEventListener('DOMContentLoaded', () => {
   const words = document.querySelectorAll('.word');
   words.forEach(word => {
     word.addEventListener('dragstart', dragStart);
@@ -154,10 +150,10 @@ function clearSentence(containerId) {
   container.textContent = container.getAttribute('placeholder'); // Restore placeholder text
 }
 
-
-
-// PDF -********************************************************************
 // Function to print the screen as PDF
 function printScreen() {
   window.print(); // Open print dialog
 }
+
+// Fetch words when the page loads
+fetchWords();
