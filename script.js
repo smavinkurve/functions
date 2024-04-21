@@ -1,4 +1,4 @@
-// QUESTIONS -********************************************************************
+// QUESTIONS
 // Array to store questions
 let questions = [];
 
@@ -33,7 +33,7 @@ function shuffleQuestions() {
 // Fetch questions when the page loads
 fetchQuestions();
 
-// WORDS FETCHING -********************************************************************
+// WORDS FETCHING
 // Fetch JSON data
 async function fetchWords() {
   try {
@@ -71,10 +71,6 @@ function createWordElement(word) {
   return wordElement;
 }
 
-// Drag and drop functionality
-
-// JavaScript with modifications
-// Drag and drop functionality
 // Drag and drop functionality
 function dragStart(e) {
   e.dataTransfer.setData('text/plain', this.textContent);
@@ -154,9 +150,7 @@ function clearSentence(containerId) {
   container.textContent = container.getAttribute('placeholder'); // Restore placeholder text
 }
 
-
-
-// PDF -********************************************************************
+// PDF
 // Function to print the screen as PDF
 function printScreen() {
   window.print(); // Open print dialog
