@@ -66,26 +66,18 @@ function createWordElement(word) {
   wordElement.textContent = word;
   wordElement.classList.add('word');
   wordElement.draggable = true;
-  // Add event listener for drag start to dynamically added word elements
-  wordElement.addEventListener('dragstart', dragStart);
+  // Add event listener for tap start to dynamically added word elements
+  wordElement.addEventListener('touchstart', dragStart);
   return wordElement;
 }
 
-// Drag and drop functionality
-// JavaScript with modifications for mobile devices
+// Tap and drop functionality
 function dragStart(e) {
-  // For touch devices, use touch events
-  if (e.type === 'touchstart') {
-    e.preventDefault();
-    const touch = e.touches[0];
-    const offsetX = touch.clientX - e.target.getBoundingClientRect().left;
-    const offsetY = touch.clientY - e.target.getBoundingClientRect().top;
-    e.dataTransfer.setData('text/plain', offsetX + ',' + offsetY);
-  } else {
-    // For non-touch devices, use mouse events
-    e.dataTransfer.setData('text/plain', this.textContent);
-    e.dataTransfer.setData('text/html', this.outerHTML); // Store the outerHTML for styling
-  }
+  e.preventDefault(); // Prevent default behavior for touch events
+  const touch = e.touches[0];
+  const offsetX = touch.clientX - e.target.getBoundingClientRect().left;
+  const offsetY = touch.clientY - e.target.getBoundingClientRect().top;
+  e.dataTransfer.setData('text/plain', offsetX + ',' + offsetY);
 }
 
 function dragOver(e) {
@@ -103,59 +95,26 @@ function dragLeave() {
 
 function drop(e) {
   e.preventDefault();
-  const draggedWordText = e.dataTransfer.getData('text/plain');
   const draggedWordHTML = e.dataTransfer.getData('text/html');
 
-  // For touch devices, calculate the drop position based on touch coordinates
-  if (e.type === 'touchend') {
-    const touch = e.changedTouches[0];
-    const offsetX = parseFloat(draggedWordText.split(',')[0]);
-    const offsetY = parseFloat(draggedWordText.split(',')[1]);
-    const x = touch.clientX - offsetX;
-    const y = touch.clientY - offsetY;
+  // Calculate the drop position based on touch coordinates
+  const touch = e.changedTouches[0];
+  const offsetX = parseFloat(draggedWordHTML.split(',')[0]);
+  const offsetY = parseFloat(draggedWordHTML.split(',')[1]);
+  const x = touch.clientX - offsetX;
+  const y = touch.clientY - offsetY;
 
-    // Find the drop target using the touch coordinates
-    const target = document.elementFromPoint(x, y);
+  // Find the drop target using the touch coordinates
+  const target = document.elementFromPoint(x, y);
 
-    // If the target is a valid drop zone, append the dragged word
-    if (target.classList.contains('dropzone')) {
-      const wordElement = document.createElement('div');
-      wordElement.innerHTML = draggedWordHTML;
-      wordElement.classList.add('word', 'word-dropped');
-      target.appendChild(wordElement);
-    }
-  } else {
-    // For non-touch devices, maintain existing drop functionality
-    // Create a new word element with the stored HTML content
+  // If the target is a valid drop zone, append the dragged word
+  if (target.classList.contains('dropzone')) {
     const wordElement = document.createElement('div');
     wordElement.innerHTML = draggedWordHTML;
-    wordElement.classList.add('word', 'word-dropped'); // Add necessary classes for styling
-
-    // Check if the dropped word is placed at the beginning of the line (after pressing Enter)
-    if (e.target.tagName === 'DIV' || e.target.tagName === 'P') {
-      // Append the new word element to the sentence element
-      e.target.parentNode.insertBefore(wordElement, e.target.nextSibling);
-    } else {
-      // Create a new line and append the word to it
-      const newLine = document.createElement('p');
-      newLine.appendChild(wordElement);
-      this.appendChild(newLine);
-    }
-
-    // Clear placeholder text if present
-    if (this.textContent.trim() === this.getAttribute('placeholder')) {
-      this.textContent = '';
-    }
+    wordElement.classList.add('word', 'word-dropped');
+    target.appendChild(wordElement);
   }
 }
-
-// Add event listeners for drag and drop functionality after words are loaded
-document.addEventListener('DOMContentLoaded', () => {
-  const words = document.querySelectorAll('.word');
-  words.forEach(word => {
-    word.addEventListener('dragstart', dragStart);
-  });
-});
 
 // Add placeholder text behavior for the contenteditable div
 const sentenceDiv = document.getElementById('sentence');
@@ -185,6 +144,14 @@ function clearSentence(containerId) {
 function printScreen() {
   window.print(); // Open print dialog
 }
+
+// Add event listeners for drag and drop functionality after words are loaded
+document.addEventListener('DOMContentLoaded', () => {
+  const words = document.querySelectorAll('.word');
+  words.forEach(word => {
+    word.addEventListener('touchstart', dragStart);
+  });
+});
 
 // Fetch words when the page loads
 fetchWords();
