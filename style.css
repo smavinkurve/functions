@@ -29,7 +29,50 @@
   --light-brown: #D9A566;
   --lemon: #EEF26D;
 }
+/* GENERAL- ****************************************************************  */
+footer {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: var(--white);
+  background-color: var(--dark-grey);
+  width: 100vw;
+}
 
+/* LANDING PAGE - ****************************************************************  */
+.graphics {
+  display: none;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  font-family: var(--title-font);
+  font-size: calc(2* var(--font-size));
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 0.8em;
+  width: 80%;
+
+}
+
+.introduction-text {
+  font-family: var(--base-font);
+  text-align: left;
+  font-size: calc(1.1* var(--font-size));
+  width: 80%;
+}
+
+.introduction button {
+  padding: 0.6em;
+  padding-left: 5em;
+  padding-right: 5em;
+  margin-top: 3em;
+}
 
 /* NAVBAR - **************************************************************** */
 nav {
@@ -53,37 +96,6 @@ nav {
 }
 
 
-/* LANDING PAGE - ****************************************************************  */
-.homepage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.header {
-  font-family: var(--title-font);
-  font-size: calc(2* var(--font-size));
-  text-align: center;
-  margin-top: 1em;
-  margin-bottom: 0.8em;
-  width: 80%;
-
-}
-
-.introduction {
-  font-family: var(--base-font);
-  text-align: center;
-  font-size: calc(1.1* var(--font-size));
-  width: 80%;
-}
-
-.homepage button {
-  padding: 0.6em;
-  padding-left: 2em;
-  padding-right: 2em;
-  margin-top: 3em;
-}
 
 /* QUESTIONS - ****************************************************************  */
 h1 {
@@ -204,7 +216,39 @@ button:hover {
 /* ****************************************************************************************************************** */
 /* MEDIA QUERIES - LAPTOPS and LARGER SCREENS */
 @media (min-width: 1000px) {
-  /* NAVBAR */
+ /* LANDING PAGE */
+
+.homepage {
+  display: flex;
+}
+
+.graphics {
+  width: 40%;
+  background-color: var(--lemon);
+  display: inline;
+}
+
+.introduction {
+  width: 60%;
+}
+
+.header {
+  font-size: calc(3* var(--font-size));
+  margin-top: 1em;
+  margin-bottom: 0.8em;
+  width: 50%;
+}
+
+.introduction-text {
+  font-family: var(--base-font);
+  text-align: left;
+  font-size: calc(1.3* var(--font-size));
+  width: 60%;
+}
+ 
+ 
+ 
+/* NAVBAR */
 nav {
   background-color: var(--dark-grey);
   width: 100vw;
@@ -223,21 +267,6 @@ nav {
 .navbar p {
   font-size: calc(1.3* var(--font-size));
   color: var(--white);
-}
-
-/* INTRODUCTION */
-.header {
-  font-size: calc(3* var(--font-size));
-  margin-top: 1em;
-  margin-bottom: 0.8em;
-  width: 50%;
-}
-
-.introduction {
-  font-family: var(--base-font);
-  text-align: left;
-  font-size: calc(1.3* var(--font-size));
-  width: 40%;
 }
 
 /* QUESTIONS */
@@ -310,11 +339,9 @@ h1 {
 /* FOOTER */
 footer {
   font-size: calc(1.2* var(--font-size));
-
 }
 
 }
-
 
 
 
