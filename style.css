@@ -211,7 +211,7 @@ button:hover {
   padding: calc(2* var(--spacing));
 
   margin-top: 0.3em;
-  min-height: 3em;
+  min-height: calc(8* var(--spacing));
   min-width: 70%; 
   word-wrap: break-word;
   overflow-y: auto;
@@ -240,7 +240,8 @@ button:hover {
   width: 40%;
   background-color: var(--deep-blue);
   display: flex;
-  justify-content: center;
+  overflow-x: hidden;
+  /* justify-content: center; */
 }
 
 .homepage-words {
@@ -271,7 +272,7 @@ button:hover {
   justify-content: center;
   
   position: fixed; 
-  top: 28%; 
+  top: 26%; 
 }
 
 .moving-word {
@@ -393,7 +394,6 @@ h1 {
   }
   
   #sentence-container {
-    min-height: 2em;
     min-width: 70%; 
     word-wrap: break-word;
     overflow-y: auto;
@@ -410,7 +410,7 @@ h1 {
     padding: calc(2* var(--spacing));
   
     margin-top: 0.3em;
-    min-height: 3em;
+    min-height: calc(10* var(--spacing));
     min-width: 70%; 
     word-wrap: break-word;
     overflow-y: auto;
