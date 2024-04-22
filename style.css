@@ -38,6 +38,12 @@ footer {
   width: 100vw;
 }
 
+@keyframes moveAround {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
 /* LANDING PAGE - ****************************************************************  */
 .graphics {
   display: none;
@@ -72,6 +78,22 @@ footer {
   padding-left: 5em;
   padding-right: 5em;
   margin-top: 3em;
+}
+
+.homepage-words {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+
+}
+
+.moving-word {
+  font-family: var(--word-font);
+  font-size: calc(1* var(--font-size));
+  background-color: var(--beige);
+  border: 1px solid var(--dark-grey);
+  padding: 5px 10px;
+  margin: var(--spacing);
 }
 
 /* NAVBAR - **************************************************************** */
@@ -225,7 +247,27 @@ button:hover {
 .graphics {
   width: 40%;
   background-color: var(--lemon);
-  display: inline;
+  display: flex;
+  gap: calc(2* var(--spacing));
+}
+
+.homepage-words {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.moving-word {
+  font-size: calc(1.5* var(--font-size));
+
+  font-family: var(--word-font);
+  background-color: var(--beige);
+  border: 1px solid var(--dark-grey);
+  padding: 5px 10px;
+  margin: var(--spacing);
+
+  display: flex;
+  flex-wrap: wrap;
+
 }
 
 .introduction {
