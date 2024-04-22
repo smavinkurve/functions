@@ -189,3 +189,5 @@ function printScreen() {
 // Fetch words when the page loads
 fetchWords();
 
+
+
