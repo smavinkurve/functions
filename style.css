@@ -95,7 +95,7 @@ footer {
 
 /* NAVBAR - **************************************************************** */
 nav {
-  background-color: var(--deep-blue);
+  background-color: var(--dark-grey);
   width: 100vw;
 }
 
@@ -236,47 +236,88 @@ button:hover {
 /* MEDIA QUERIES - LAPTOPS and LARGER SCREENS */
 @media (min-width: 1000px) {
  /* LANDING PAGE */
-
-.homepage {
-  display: flex;
-}
-
 .graphics {
   width: 40%;
   background-color: var(--deep-blue);
   display: flex;
+  justify-content: center;
 }
 
 .homepage-words {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 80%;
   align-items: flex-start;
+  width: 80%;
 }
 
 .static-words {
-  position: sticky;
-  top: 5em;
+  top: 3em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 
-  position: initial;
-  flex-direction: row;
-  margin-top: 0;
+  position: fixed; 
+  top: 20%; 
 }
 
-.moving-words {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.moving-word, .static-word {
+.static-word {
   font-size: calc(1.2* var(--font-size));
 }
 
+.moving-words {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  position: fixed; 
+  top: 28%; 
+}
+
+.moving-word {
+  font-size: calc(1.2* var(--font-size));
+
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeInWord {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Move each word down by 20px */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move each word back to its original position */
+  }
+}
+
+/* ANIMATION */
+.moving-word:nth-child(1) {
+  animation-delay: 0.5s; /* Delay for the first word */
+}
+
+.moving-word:nth-child(2) {
+  animation-delay: 1s; /* Delay for the second word */
+}
+
+.moving-word:nth-child(3) {
+  animation-delay: 1.5s; /* Delay for the third word */
+}
+
+ /* STILL THE LANDING PAGE */
+.homepage {
+  display: flex;
+}
 
 .introduction {
   width: 65%;
