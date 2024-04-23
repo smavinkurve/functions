@@ -31,8 +31,8 @@
   --dark-grey:#0B0B0B;
   --light-grey: #c9c9c9;
   --white: #FFFFFF;
-  --beige: rgb(246, 242, 230);
-  --light-brown: #D9A566;
+  --beige: #f6f1e5;
+  --light-brown: #DDC280;
   --lemon: #EEF26D;
   --deep-blue: #0B66C2;
   --light-pink: #ffbcdb;
@@ -160,9 +160,9 @@ button {
   font-family: var(--base-font);
   font-size: calc(1* var(--font-size));
   padding: 0.6em;
-  border-radius: 0.3em;
-  color: var(--white);
-  background-color: var(--deep-blue);
+  border: 1.5px solid var(--dark-grey);
+  color: var(--dark-grey);
+  background-color: var(--light-brown);
   margin-bottom: 2em;
 }
 
@@ -366,7 +366,7 @@ button:hover {
 
 .header-1 {
   font-size: calc(5.5* var(--font-size));
-  margin-top: 1em;
+  margin-top: 0.7em;
   margin-bottom: 0.8em;
   width: 65%;
 }
@@ -408,8 +408,8 @@ nav {
 /* QUESTIONS */
 h1 {
     font-size: calc(3.5* var(--font-size));
-    margin-top: 1em;
-    margin-bottom: 0.6em;
+    margin-top: 2em;
+    margin-bottom: 0.8em;
   }
 
   .button-container {

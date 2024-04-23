@@ -167,7 +167,6 @@ function printScreen() {
   window.print(); 
 }
 
-// Fetch words when the page loads
 fetchWords();
 
 
