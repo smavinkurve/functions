@@ -171,4 +171,3 @@ function printScreen() {
 fetchWords();
 
 
-

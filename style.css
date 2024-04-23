@@ -13,8 +13,14 @@
   src: url(Fonts/LibreBaskerville-Regular.ttf);
 }
 
+@font-face {
+  font-family: PP Mori Semibold;
+  src: url(Fonts/PPMori-SemiBold.otf);
+}
+
 :root {
-  --title-font: 'Nikkei Maru Regular'; 
+  /* --title-font: 'Nikkei Maru Regular';  */
+  --title-font: 'PP Mori Semibold'; 
   --base-font: 'Nikkei Maru Light';
   --word-font: 'Libre Baskerville';
 
@@ -66,9 +72,10 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--beige);
 }
 
-.header {
+.header-2 {
   font-family: var(--title-font);
   font-size: calc(2* var(--font-size));
   text-align: center;
@@ -90,6 +97,18 @@ footer {
   padding-left: 5em;
   padding-right: 5em;
   margin-top: 3em;
+}
+
+.intro-1 {
+  background-color: var(--beige);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introduction .header-1, .header-2 {
+  padding: calc(2* var(--spacing));
+  border: 2px solid var(--dark-grey);
 }
 
 
@@ -240,7 +259,7 @@ button:hover {
  /* LANDING PAGE */
 .graphics {
   width: 40%;
-  background-color: var(--deep-blue);
+  background-color: var(--dark-grey);
   display: flex;
   overflow: hidden;
   /* justify-content: center; */
@@ -250,7 +269,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: left;
-  width: 80%;
+  width: 75%;
 
   margin-left: calc(2* var(--spacing));
 }
@@ -345,11 +364,18 @@ button:hover {
   width: 65%;
 }
 
-.header {
+.header-1 {
+  font-size: calc(5.5* var(--font-size));
+  margin-top: 1em;
+  margin-bottom: 0.8em;
+  width: 65%;
+}
+
+.header-2 {
   font-size: calc(3* var(--font-size));
   margin-top: 1em;
   margin-bottom: 0.8em;
-  width: 50%;
+  width: 65%;
 }
 
 .introduction-text {
@@ -452,9 +478,6 @@ footer {
 }
 
 }
-
-
-
 
 /* ****************************************************************************************************************** */
 /* MEDIA QUERIES - PRINT */
