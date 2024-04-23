@@ -255,6 +255,7 @@ button:hover {
   margin-left: calc(2* var(--spacing));
 }
 
+
 .static-words {
   display: flex;
   flex-wrap: wrap;
@@ -323,7 +324,17 @@ button:hover {
 .moving-word:nth-child(4) {
   animation-delay: 2s; 
 }
+.moving-word:nth-child(5) {
+  animation-delay: 2.5s; 
+}
 
+.moving-word:nth-child(6) {
+  animation-delay: 3s; 
+}
+
+.moving-word:nth-child(7) {
+  animation-delay: 3.5s; 
+}
 
  /* STILL THE LANDING PAGE */
 .homepage {
