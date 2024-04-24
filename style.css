@@ -211,8 +211,12 @@ button:hover {
   padding: 5px 10px;
   margin: 5px;
   cursor: grab;
-
   display: inline;
+
+  /* The internet says this makes the word selection go away but it has not. Revisit if you have time */
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #sentence .word {
@@ -275,7 +279,6 @@ button:hover {
   background-color: var(--dark-grey);
   display: flex;
   overflow: hidden;
-  /* justify-content: center; */
 }
 
 .homepage-words {
@@ -468,7 +471,7 @@ h1 {
 /* MAGNETIC POETRY */
   #word-container {
     width: 70%;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     max-height: 100%;
     overflow-y: none;
   }
