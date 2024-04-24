@@ -29,7 +29,7 @@ function shuffleQuestions() {
 fetchQuestions();
 
 
-// WORDS FETCHING -********************************************************************
+// WORD FETCHING -********************************************************************
 async function fetchWords() {
   try {
     const response = await fetch('words.json'); // Replace 'words.json' with your JSON file path or URL
@@ -65,7 +65,7 @@ function createWordElement(word) {
 }
 
 
-// WORDS DRAGGING -********************************************************************
+// WORD DRAGGING -********************************************************************
 function dragStart(e) {
 
 // May need revisions later --- check later after finalizing desktop functionality.
@@ -141,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Edit because you may not need default text anymore - test later OR add default text in the containers
+
 // const sentenceDiv = document.getElementById('sentence');
 
 // sentenceDiv.addEventListener('focus', function() {

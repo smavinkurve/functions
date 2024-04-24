@@ -48,6 +48,8 @@
   --lemon: #EEF26D;
   --deep-blue: #0B66C2;
   --light-pink: #ffbcdb;
+
+  --delay: 0.5s;
 }
 /* GENERAL- ****************************************************************  */
 footer {
@@ -60,6 +62,10 @@ footer {
 
 span {
   font-family: var(--pixel-font);
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* LANDING PAGE - ****************************************************************  */
@@ -180,6 +186,7 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 /* MAGNETIC POETRY - **************************************************************** */
@@ -285,7 +292,7 @@ button:hover {
   justify-content: center;
 
   position: fixed; 
-  top: 20%; 
+  top: 30%; 
   max-width: 36%;
 }
 
@@ -298,7 +305,7 @@ button:hover {
   flex-wrap: wrap;
   
   position: fixed; 
-  top: 30%;
+  top: 40%;
   max-width: 36%;
 }
 
@@ -311,6 +318,7 @@ button:hover {
   animation: fadeIn 1s ease forwards;
 }
 
+/* ANIMATION */
 @keyframes fadeInWord {
   from {
     opacity: 0;
@@ -323,15 +331,14 @@ button:hover {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Move each word down by 20px */
+    transform: translateY(20px); 
   }
   to {
     opacity: 1;
-    transform: translateY(0); /* Move each word back to its original position */
+    transform: translateY(0); 
   }
 }
 
-/* ANIMATION */
 .moving-word:nth-child(1) {
   animation-delay: 0.5s; 
 }
@@ -492,7 +499,7 @@ footer {
     border: var(--white);
   }
 
-  button, nav, footer {
+  title, head, button, nav, footer {
     display: none;
   }
 
