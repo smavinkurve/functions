@@ -462,7 +462,7 @@ h1 {
     font-family: var(--base-font);
     font-size: calc(1.2* var(--font-size));
     padding: 0.6em;
-    margin-bottom: 2em;
+    margin-bottom: 1.6em;
   }
 
 /* MAGNETIC POETRY */
