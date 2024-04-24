@@ -339,6 +339,7 @@ button:hover {
   }
 }
 
+/* Find a more efficient way to do this at some point :')' */
 .moving-word:nth-child(1) {
   animation-delay: 0.5s; 
 }
@@ -366,7 +367,40 @@ button:hover {
   animation-delay: 3.5s; 
 }
 
- /* STILL THE LANDING PAGE */
+.moving-word:nth-child(8) {
+  animation-delay: 4s; 
+}
+
+.moving-word:nth-child(9) {
+  animation-delay: 4.5s; 
+}
+
+.moving-word:nth-child(10) {
+  animation-delay: 5s; 
+}
+
+.moving-word:nth-child(11) {
+  animation-delay: 5.5s; 
+}
+
+.moving-word:nth-child(12) {
+  animation-delay: 6s; 
+}
+
+.moving-word:nth-child(13) {
+  animation-delay: 6.5s; 
+}
+
+.moving-word:nth-child(14) {
+  animation-delay: 7s; 
+}
+
+.moving-word:nth-child(15) {
+  animation-delay: 7.5s; 
+}
+
+
+/* STILL THE LANDING PAGE - Keep scrolling ------*/
 .homepage {
   display: flex;
 }
