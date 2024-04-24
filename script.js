@@ -32,7 +32,7 @@ fetchQuestions();
 // WORD FETCHING -********************************************************************
 async function fetchWords() {
   try {
-    const response = await fetch('words.json'); // Replace 'words.json' with your JSON file path or URL
+    const response = await fetch('words.json'); 
     if (!response.ok) {
       throw new Error('Failed to fetch words');
     }
