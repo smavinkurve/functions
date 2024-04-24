@@ -98,14 +98,16 @@ body {
 }
 
 .header-1 {
+  font-size: calc(2.7* var(--font-size));
   line-height: calc(0.7* var(--line-height));
+  width: 80%;
 }
 
 .header-2 {
   font-family: var(--title-font);
   font-size: calc(2* var(--font-size));
   text-align: center;
-  margin-top: 1em;
+  margin-top: 0.5em;
   margin-bottom: 0.8em;
   width: 80%;
 }
@@ -114,7 +116,7 @@ body {
   font-family: var(--base-font);
   text-align: left;
   font-size: calc(1.1* var(--font-size));
-  width: 85%;
+  width: 80%;
   line-height: var(--line-height);
 }
 
